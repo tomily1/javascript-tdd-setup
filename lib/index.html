@@ -10,15 +10,26 @@
     function numberSubmit(){
         const inputVal = document.getElementById('myinput').value;
         const myScreen = document.getElementById('screen');
-        myScreen.innerHTML = inputVal;
-
-        
+        const myspace = []
+        for(let i= 1; i <= inputVal; i++){
+            let flag = 0
+            for(let j = 2; j< i; j++){
+                if(i % j == 0){
+                    flag = 1;
+                    break;
+                }
+            }
+            if(i >1 && flag == 0){
+                myspace.push([i]);
+            }
+        }
+        myScreen.innerHTML=myspace;
     }
 </script>
 <body>
     <form action="#" onsubmit="numberSubmit()">
         <input id="myinput" type="text" />
-        <h1 id="screen"></h1>
+        <h4 id="screen"></h4>
     </form> 
 </body>
 </html>
