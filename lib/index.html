@@ -6,6 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+
+    body{
+        overflow: hidden;
+        text-align: center;
+    }
+    h4 {
+        inline-size: 60em;
+        overflow-wrap: break-word;
+        
+    } 
+    #screen {
+        margin:2em auto 0 auto;
+        
+    }
+</style>
 <script>
     function numberSubmit(){
         const inputVal = document.getElementById('myinput').value;
@@ -20,16 +36,21 @@
                 }
             }
             if(i >1 && flag == 0){
-                myspace.push([i]);
+                myspace.push('&nbsp;' + i);
             }
         }
+        
         myScreen.innerHTML=myspace;
+        
     }
+
 </script>
 <body>
+    <div class="container">
     <form action="#" onsubmit="numberSubmit()">
-        <input id="myinput" type="text" />
+        <input placeholder="find its prime numbers" id="myinput" type="text" />
         <h4 id="screen"></h4>
     </form> 
+    </div>
 </body>
 </html>
