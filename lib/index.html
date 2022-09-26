@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime numbers</title>
+</head>
+<style>
+
+    body{
+        overflow: hidden;
+        text-align: center;
+    }
+    h4 {
+        inline-size: 60em;
+        overflow-wrap: break-word;
+        
+    } 
+    #screen {
+        margin:2em auto 0 auto;
+        
+    }
+</style>
+<script>
+    function numberSubmit(){
+        const inputVal = document.getElementById('myinput').value;
+        const myScreen = document.getElementById('screen');
+        const myspace = []
+        for(let i= 1; i <= inputVal; i++){
+            let flag = 0
+            for(let j = 2; j< i; j++){
+                if(i % j == 0){
+                    flag = 1;
+                    break;
+                }
+            }
+            if(i >1 && flag == 0){
+                myspace.push('&nbsp;' + i);
+            }
+        }
+        
+        myScreen.innerHTML=myspace;
+        
+    }
+
+</script>
+<body>
+    <div class="container">
+    <form action="#" onsubmit="numberSubmit()">
+        <input placeholder="find its prime numbers" id="myinput" type="text" />
+        <h4 id="screen"></h4>
+    </form> 
+    </div>
+</body>
+</html>
